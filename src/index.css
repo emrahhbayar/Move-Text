@@ -8,38 +8,35 @@ body {
 }
 
 .navbar-container {
-
     width: 100%;
     background-color: #213555;
-
 }
 
 .nav-header {
-
-    color: #F5EFE7;
-}
-
-.link {
-    font-size: 1rem;
-    color: #F5EFE7;
+    font-size: 2rem;
+    color: #D8C4B6;
     text-decoration: none;
     margin-left: 1rem
 }
 
-.nav-header:hover,
+.link {
+    font-size: 1.8rem;
+    color: #F5EFE7;
+    text-decoration: none;
+    margin-left: 1.2rem
+}
+
 .link:hover {
     color: #D8C4B6;
 }
 
 .h3-header {
-
     color: #F5EFE7;
 }
 
 .toggler-button {
     background-color: #F5EFE7;
     color: #F5EFE7;
-
 }
 
 .input {
