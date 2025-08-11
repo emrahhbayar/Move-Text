@@ -1,12 +1,38 @@
-# React + Vite
+# Move Text
+## React Js ile geliştirilmiş, cihazlar arası güvenli metin aktarım uygulaması.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, farklı cihazlar arasında kopyalamak istediğiniz metin ve linkleri güvenli ve hızlı bir şekilde aktarmak için geliştirilmiş uygulamadır. Apple'ın Evrensel Pano (Universal Clipboard) özelliğinden ilham alarak, kullanıcıların bir cihazda kopyaladıkları bir metni, sistem tarafından oluşturulan benzersiz bir kimlik (ID) ve kullanıcı tanımlı bir parola aracılığıyla başka bir cihazdan kolayca almalarını sağlar.
 
-Currently, two official plugins are available:
+Uygulamanın temel amacı, platform ve konumdan bağımsız olarak, geçici metin tabanlı verilerin iki nokta arasında güvenli bir koridor üzerinden senkronizasyonunu sağlamaktır. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Nasıl Çalışır?
+Uygulama, bir kaynak cihazdan veri gönderme ve bir hedef cihazdan veri alma olmak üzere iki temel işlem üzerine kuruludur.
 
-## Expanding the ESLint configuration
+Veri Gönderme (Kaynak Cihaz)
+- Metin Girişi: Aktarılacak metin, uygulama arayüzündeki ilgili metin kutusuna yazılır veya yapıştırılır.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Parola Belirleme: Verinin güvenliğini sağlamak amacıyla kullanıcı tarafından bir parola belirlenir ve ilgili alana girilir. Bu parola, verinin şifrelenmesi için anahtar görevi görür.
+
+- Aktarım Başlatma: "Create ID" butonuna basıldığında, girilen metin belirlenen parola ile şifrelenerek sunucuya yüklenir.
+
+- ID Alımı: Başarılı yüklemenin ardından sistem, bu veri paketine özel, benzersiz bir Aktarım ID'si üretir ve kullanıcıya gösterir.
+
+Veri Alma (Hedef Cihaz)
+
+- ID Girişi: Kaynak cihazda oluşturulan Aktarım ID'si, hedef cihazdaki uygulama arayüzünde ilgili alana girilir.
+
+- Parola Girişi: Kaynak cihazda belirlenen parolanın aynısı, hedef cihazdaki şifre alanına yazılır.
+
+- Veriyi Çekme: "Get Text" butonuna tıklandığında, sistem girilen ID ve parolayı doğrular.
+
+- Sonuç: Doğrulama başarılı olursa, şifrelenmiş veri sunucudan çekilir, şifresi çözülür ve kullanıcıya gösterilir. Böylece metin, kaynak cihazdan hedef cihaza güvenli bir şekilde aktarılmış olur.
+
+## Kullanılan kütüphane ve teknolojiler
+- React Js  
+- React Router  
+- Css  
+- Bootstrap  
+- axios
+
+https://github.com/user-attachments/assets/ea8e306b-478a-447a-b4e3-dd9c449d2615
+
